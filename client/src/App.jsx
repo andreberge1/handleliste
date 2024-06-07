@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 
 import './App.css';
+import NewListPage from "./Pages/NewListPage/NewListPage";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/newlist" element={<NewListPage />} />
         </Routes>
       </BrowserRouter>
     </>

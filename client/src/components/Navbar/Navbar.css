@@ -8,9 +8,35 @@
     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
 }
 
+.pageName {
+    width: 300px;
+}
+
 .pageName p {
     font-family: "Pacifico", cursive;
     font-size: xxx-large;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+    padding: 0;
+}
+
+.navListItem {
+    list-style: none;
+    font-family: "Pacifico", cursive;
+    font-size: x-large;
+}
+
+.navListItem a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.avatarContainer {
+    width: 300px;
 }
 
 .profileAvatar {

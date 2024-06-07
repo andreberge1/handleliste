@@ -1,0 +1,24 @@
+.listContainer {
+    width: 50%;
+    text-align: center;
+}
+
+.searchList {
+    padding-left: 0;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.groceryItem {
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 2px;
+    border: 2px, solid, var(--color-secondary);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    transition:all .5s ease;
+    box-shadow: 20px 38px 34px -20px hsla(0,0%,0%,.2);
+}
+
+.groceryItem:hover {
+    box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+}

@@ -1,6 +1,7 @@
 
 import "./Navbar.css"
 import avatar from "../../img/avatar.jpg"
+import { Link } from "react-router-dom"
 
 export default function Navbar () {
 
@@ -10,7 +11,20 @@ export default function Navbar () {
                 <span className="pageName">
                     <p>Handlelappen</p>
                 </span>
-                <img src={avatar} alt="Profile avatar" className="profileAvatar" />
+
+                <ul>
+                    <li className="navListItem">
+                        <Link to="/">Mine lister</Link>
+                    </li>
+                    <li className="navListItem">
+                        <Link to="/newlist">Ny liste</Link>
+                    </li>
+                </ul>
+
+                <div className="avatarContainer">
+                    <img src={avatar} alt="Profile avatar" className="profileAvatar" />
+                </div>
+                
             </div>
         </>
     )
