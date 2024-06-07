@@ -13,7 +13,7 @@
 }
 
 .title {
-    font-family: "Pacifico", cursive;
+    font-family: var(--font-headers);
     font-size: xxx-large;
 }
 
@@ -26,7 +26,7 @@
 
 .navListItem {
     list-style: none;
-    font-family: "Pacifico", cursive;
+    font-family: var(--font-headers);
     font-size: x-large;
 }
 

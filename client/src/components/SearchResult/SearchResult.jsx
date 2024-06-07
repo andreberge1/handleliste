@@ -1,17 +1,17 @@
 
 import "./SearchResult.css"
 
-export default function SearchResult ({ items }) {
+export default function SearchResult ({ queryItems, setShoppingList }) {
 
     const handleAddItem = (item) => {
-        alert("Pressed: " + item.product)
+        setShoppingList(prev => [...prev, item])
     }
 
     return (
         <div className="listContainer">
             <ul className="searchList">
                 {
-                    items.map(item => (
+                    queryItems.map(item => (
                         <li onClick={() => handleAddItem(item)} className="groceryItem">
                             <span>
                                 {item.product}<br />

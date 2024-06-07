@@ -3,6 +3,25 @@
     margin: auto;
     margin-top: 50px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+}
+
+.newListContainer {
+    width: 60%;
+    top: auto;
+}
+
+.nameInput {
+    border-style: none;
+    border-bottom: 2px solid var(--color-text);
+    background-color: inherit;
+    font-family: var(--font-headers);
+    font-size: x-large;
+    color: inherit;
+    outline: none;
+    width: 75%;
+}
+
+.searchContainer {
+    width: 40%;
 }
