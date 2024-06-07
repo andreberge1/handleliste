@@ -9,7 +9,9 @@ export default function Navbar () {
         <>
             <div className="navbar">
                 <span className="pageName">
-                    <p>Handlelappen</p>
+                    <p className="title">
+                        <Link to="/">Handlelappen</Link>
+                    </p>
                 </span>
 
                 <ul>

@@ -12,7 +12,7 @@
     width: 300px;
 }
 
-.pageName p {
+.title {
     font-family: "Pacifico", cursive;
     font-size: xxx-large;
 }
@@ -30,11 +30,6 @@
     font-size: x-large;
 }
 
-.navListItem a {
-    text-decoration: none;
-    color: var(--color-text);
-}
-
 .avatarContainer {
     width: 300px;
 }
@@ -45,4 +40,27 @@
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid grey;
+}
+
+.navbar a {
+    background-image: linear-gradient(
+        to right,
+        var(--color-primary),
+        var(--color-primary) 50%,
+        var(--color-text) 50%
+      );
+      background-size: 200% 100%;
+      background-position: -100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    background-position: 0;
+}
+
+.navbar a:hover::before {
+    width: 100%;
 }
