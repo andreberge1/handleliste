@@ -1,13 +1,14 @@
-
-import "./NewListPage.css"
-
 import { useState } from 'react';
+
 import getGroceriesFromAPI from '../../utils/kassalappApi';
 import SearchResult from '../../components/SearchResult/SearchResult';
 
 import SaveIcon from "../../Icons/SaveIcon";
 import HamburgerIcon from "../../Icons/HamburgerIcon";
 import RemoveIcon from "../../Icons/RemoveIcon"
+
+import "./NewListPage.css"
+import Button from '../../components/Button/Button';
 
 export default function NewListPage () {
   const [query, setQuery] = useState()
@@ -25,31 +26,32 @@ export default function NewListPage () {
     setQuery(event.target.value)
   }
 
-  const handleRemove = (event) => {
-    event.preventDefault();
+  const handleRemove = value => {
+    setShoppingList(prev => {
+        return prev.filter(item => item !== value)
+    })
   }
 
   return (
     <div className='newListPage'>
 
         <div className="newListContainer">
-            <input type="text" placeholder="Ny liste" className="nameInput"/>
-
-            <SaveIcon size={"45"} />
-
-            <HamburgerIcon size={"45"} />
+            <div className="newListHeader">
+                <input type="text" placeholder="Ny liste" className="nameInput"/>
+                <SaveIcon size={"45"} />
+            </div>
 
             {
                 shoppingList.length > 0 ? (
                     <ul>
                         {
                             shoppingList.map(item => (
-                                <li className="shoppingListItem">
+                                <li className="shoppingListItem" key={item.ean}>
                                     <span>
                                         <p className="product">{item.product}</p>
                                         <p className="vendor">{item.vendor}</p>
                                     </span>
-                                    <span className="removeButton" onClick={() => handleRemove()}>
+                                    <span className="removeButton" onClick={() => handleRemove(item)}>
                                         <RemoveIcon size={"35"} />
                                     </span>
 
@@ -64,9 +66,9 @@ export default function NewListPage () {
         </div>
 
         <div className="searchContainer">
-            <form onSubmit={handleSumbit}>
-                <input type='text' value={query} onChange={handleChange}/>
-                <input type="submit" value="Submit" />
+            <form onSubmit={handleSumbit} className='apiQueryForm'>
+                <input type='text' className="searchInput" value={query} onChange={handleChange}/>
+                <Button text={"Søk"} />
             </form>
 
             {
