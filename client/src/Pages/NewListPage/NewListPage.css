@@ -8,7 +8,7 @@
 
 .newListContainer {
     width: 60%;
-    top: auto;
+    align-self: flex-start;
 }
 
 .nameInput {
@@ -22,6 +22,36 @@
     width: 75%;
 }
 
+.newListContainer svg {
+    cursor: pointer;
+}
+
+.newListContainer ul {
+    padding-left: 0;
+}
+
+.shoppingListItem {
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 2px;
+    border: 2px, solid, var(--color-secondary);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    transition:all .5s ease;
+    box-shadow: 20px 38px 34px -20px hsla(0,0%,0%,.2);
+}
+
 .searchContainer {
     width: 40%;
+}
+
+.product {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+.vendor {
+    padding: 0;
+    margin: 0;
+    font-style: italic;
 }

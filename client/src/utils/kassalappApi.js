@@ -11,8 +11,11 @@ const getGroceriesFromAPI = async (query) => {
         if(Array.isArray(json.data) && json.data.length > 0) {
             json.data.forEach(item => {
                 itemList.push({
+                    ean: item.ean,
                     product: item.name,
-                    vendor: item.vendor
+                    vendor: item.vendor,
+                    img: item.image,
+                    category: item.category
                 })
             })
         } else {

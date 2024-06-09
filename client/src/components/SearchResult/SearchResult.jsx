@@ -14,8 +14,8 @@ export default function SearchResult ({ queryItems, setShoppingList }) {
                     queryItems.map(item => (
                         <li onClick={() => handleAddItem(item)} className="groceryItem">
                             <span>
-                                {item.product}<br />
-                                {item.vendor}
+                                <p className="product">{item.product}</p>
+                                <p className="vendor">{item.vendor}</p>
                             </span>
                         </li>
                     ))
