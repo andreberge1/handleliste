@@ -12,6 +12,7 @@
     width: 80%;
     justify-content: space-between;
     align-content: center;
+    margin-bottom: 20px;
 }
 
 .listSearch {
@@ -23,4 +24,21 @@
     color: inherit;
     outline: none;
     width: 75%;
+}
+
+.shoppingListContainer {
+    width: 80%;
+}
+
+.shoppingListContainer ul {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.activeLists {
+    border-top: 5px solid red;
+}
+
+.completedLists {
+    border-top: 5px solid green;
 }

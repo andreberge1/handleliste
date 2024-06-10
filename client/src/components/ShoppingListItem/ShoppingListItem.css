@@ -1,0 +1,63 @@
+.mainShoppingListComp {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.2fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: 
+    "shoppingListName shoppingListName shoppingListName buttonContainer"
+    "createdDateTitle completedDateTitle numOfItemsTitle buttonContainer" 
+    "createdDate completedDate numberOfItems buttonContainer";
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 2px;
+    border: 2px, solid, var(--color-secondary);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    transition:all .5s ease;
+    box-shadow: 20px 38px 34px -20px hsla(0,0%,0%,.2);
+    padding-left: 10px;
+    color: var(--color-text);
+}
+
+.mainShoppingListComp:hover {
+    background-color: var(--color-primary);
+    border: 2px, solid, white;
+}
+
+.buttonContainer {
+    grid-area: buttonContainer;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttonContainer svg {
+    cursor: pointer;
+}
+
+.shoppingListNameGrid {
+    grid-area: shoppingListName;
+}
+
+.shoppingListName {
+    font-family: var(--font-headers);
+    font-size: larger;
+    margin: 0px;
+}
+
+.createdDateTitle { grid-area: createdDateTitle; }
+.createdDate { grid-area: createdDate; }
+.completedDateTitle { grid-area: completedDateTitle; }
+.completedDate { grid-area: completedDate; }
+.numOfItemsTitle { grid-area: numOfItemsTitle; }
+.numberOfItems { grid-area: numberOfItems; }
+
+.shoppingListSubtitle {
+    margin-bottom: 0px;
+    margin-top: 2px;
+    font-size: small;
+}
+
+.shoppingListData {
+    margin-top: 0px;
+    font-size: medium;
+    font-style: italic;
+}

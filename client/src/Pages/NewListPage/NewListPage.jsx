@@ -4,7 +4,6 @@ import getGroceriesFromAPI from '../../utils/kassalappApi';
 import SearchResult from '../../components/SearchResult/SearchResult';
 
 import SaveIcon from "../../Icons/SaveIcon";
-import HamburgerIcon from "../../Icons/HamburgerIcon";
 import RemoveIcon from "../../Icons/RemoveIcon"
 
 import "./NewListPage.css"
