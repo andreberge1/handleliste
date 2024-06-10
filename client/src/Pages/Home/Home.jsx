@@ -21,6 +21,7 @@ export default function Home () {
         </div>
 
         <div className="shoppingListContainer activeLists">
+            <p className='shoppingListHeader'>Aktive lister</p>
             <ul>
                 {
                     shoppingLists.map(item => (
@@ -35,17 +36,18 @@ export default function Home () {
         </div>
 
         <div className="shoppingListContainer completedLists">
-                <ul>
-                    {
-                        shoppingLists.map(item => (
-                           !item.completed && (
-                                <li onClick={handleListItemClick}>
-                                    <ShoppingListItem item={item} />
-                                </li>
-                           )
-                        ))
-                    }
-                </ul>
+            <p className='shoppingListHeader'>Fullførte lister</p>
+            <ul>
+                {
+                    shoppingLists.map(item => (
+                        !item.completed && (
+                            <li onClick={handleListItemClick}>
+                                <ShoppingListItem item={item} />
+                            </li>
+                        )
+                    ))
+                }
+            </ul>
         </div>
     </div>
   );

@@ -35,10 +35,9 @@
     list-style: none;
 }
 
-.activeLists {
-    border-top: 5px solid red;
-}
-
-.completedLists {
-    border-top: 5px solid green;
+.shoppingListHeader {
+    border-bottom: 2px solid var(--color-text);
+    font-size: x-large;
+    font-family: var(--font-headers);
+    margin-bottom: 12px;
 }
