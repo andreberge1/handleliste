@@ -26,7 +26,7 @@ export default function Home () {
                 {
                     shoppingLists.map(item => (
                         item.completed && (
-                            <li onClick={handleListItemClick}>
+                            <li>
                                 <ShoppingListItem item={item} />
                             </li>
                         )

@@ -50,7 +50,7 @@ export default function NewListPage () {
                                         <p className="product">{item.product}</p>
                                         <p className="vendor">{item.vendor}</p>
                                     </span>
-                                    <span className="removeButton" onClick={() => handleRemove(item)}>
+                                    <span id="removeButton" onClick={() => handleRemove(item)}>
                                         <RemoveIcon size={"35"} />
                                     </span>
 

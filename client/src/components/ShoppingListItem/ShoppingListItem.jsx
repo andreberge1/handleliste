@@ -11,12 +11,23 @@ export default function ShoppingListItem ({ item }) {
         alert("test")
     }
 
+    const clickTwo = (event) => {
+        event.stopPropagation()
+        alert(item.name)
+    }
+
     return (
-        <div className="mainShoppingListComp">
+        <div className="mainShoppingListComp" onClick={() => click()}>
             <div className="buttonContainer">
-                <EditIcon size={"35"} />
-                <CopyIcon size={"35"} />
-                <ShareIcon size={"35"} />
+                <button className="actionButton" onClick={clickTwo}>
+                    <EditIcon size={"35"} />
+                </button>
+                <button className="actionButton" onClick={clickTwo}>
+                    <CopyIcon size={"35"} />
+                </button>
+                <button className="actionButton" onClick={clickTwo}>
+                    <ShareIcon size={"35"} />
+                </button>
             </div>
             <div className="shoppingListNameGrid">
                 <p className="shoppingListName">{item.name}</p>

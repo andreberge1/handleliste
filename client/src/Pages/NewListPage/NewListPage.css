@@ -53,8 +53,8 @@
     align-items: center;
 }
 
-.removeButton {
-    margin-right: 5px;
+#removeButton svg {
+    margin-right: 29px;
 }
 
 .searchContainer {

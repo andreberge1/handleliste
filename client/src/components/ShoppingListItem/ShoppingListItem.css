@@ -33,6 +33,12 @@
     cursor: pointer;
 }
 
+.actionButton {
+    background-color: inherit;
+    border: none;
+    padding: 0;
+}
+
 .shoppingListNameGrid {
     grid-area: shoppingListName;
 }
