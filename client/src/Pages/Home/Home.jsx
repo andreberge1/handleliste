@@ -4,23 +4,28 @@ import './Home.css';
 
 import dummyLists from '../../utils/dummyList';
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom"
 import ShoppingListItem from '../../components/ShoppingListItem/ShoppingListItem';
 
 export default function Home () {
     const [shoppingLists, setShoppingLists] = useState(dummyLists)
+    const navigate = useNavigate()
 
-    const handleListItemClick = () => {
-        alert("Testing")
+    const handleNewListClick = () => {
+        const path = "newList"
+        navigate(path)
     }
 
   return (
     <div className='homePage'>
         <div className="homePageHeading">
             <input type="text" placeholder="Finn handleliste" className="listSearch"/>
-            <Button text={"Ny handleliste"} />
+            <span onClick={handleNewListClick}>
+                <Button text={"Ny handleliste"} />
+            </span>
         </div>
 
-        <div className="shoppingListContainer activeLists">
+        <div className="shoppingListContainer">
             <p className='shoppingListHeader'>Aktive lister</p>
             <ul>
                 {
@@ -35,13 +40,13 @@ export default function Home () {
             </ul>
         </div>
 
-        <div className="shoppingListContainer completedLists">
+        <div className="shoppingListContainer">
             <p className='shoppingListHeader'>Fullførte lister</p>
             <ul>
                 {
                     shoppingLists.map(item => (
                         !item.completed && (
-                            <li onClick={handleListItemClick}>
+                            <li>
                                 <ShoppingListItem item={item} />
                             </li>
                         )
