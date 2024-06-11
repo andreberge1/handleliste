@@ -6,9 +6,11 @@ import dummyLists from '../../utils/dummyList';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom"
 import ShoppingListItem from '../../components/ShoppingListItem/ShoppingListItem';
+import NewListModal from '../../components/NewListModal/NewListModal';
 
 export default function Home () {
     const [shoppingLists, setShoppingLists] = useState(dummyLists)
+    const [modalState, setModalState] = useState(false)
     const navigate = useNavigate()
 
     const handleNewListClick = () => {
@@ -16,11 +18,16 @@ export default function Home () {
         navigate(path)
     }
 
+    const showModal = (e) => {
+        setModalState(!modalState)
+    }
+
   return (
     <div className='homePage'>
+        <NewListModal onClose={showModal} show={modalState} />
         <div className="homePageHeading">
             <input type="text" placeholder="Finn handleliste" className="listSearch"/>
-            <span onClick={handleNewListClick}>
+            <span onClick={showModal}>
                 <Button text={"Ny handleliste"} />
             </span>
         </div>
