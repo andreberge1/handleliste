@@ -1,24 +1,27 @@
 
 import "./NewListModal.css"
 
-export default function NewListModal ({ show }) {
+export default function NewListModal ({ isModalOpen, onClose }) {
 
-    const onClose = (e) => {
-        onClose && onclose(e)
+    if (isModalOpen !== true) {
+        return null
     }
 
     return (
-        <>
-        {
-            show && (
-                <div className="modalContainer">
-                    <p>This is a test</p>
-                    <button onClose={e => onClose(e)}>
-                        Lukk
-                    </button>
+        <div className="modalContainer">
+            <div className="modalContent">
+                <div className="closeIcon" onClick={onClose}>
+                    <p>X</p>
                 </div>
-            )
-        }
-        </>
+                <div className="modalTitle">
+                    <p>Lag ny handleliste</p>
+                    <hr />
+                </div>
+                <p>Dette er en test</p>
+                <button onClick={onClose}>
+                    Lukk
+                </button>
+            </div>
+        </div>
     )
 }

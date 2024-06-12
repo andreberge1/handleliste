@@ -10,7 +10,7 @@ import NewListModal from '../../components/NewListModal/NewListModal';
 
 export default function Home () {
     const [shoppingLists, setShoppingLists] = useState(dummyLists)
-    const [modalState, setModalState] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const navigate = useNavigate()
 
     const handleNewListClick = () => {
@@ -18,16 +18,21 @@ export default function Home () {
         navigate(path)
     }
 
-    const showModal = (e) => {
-        setModalState(!modalState)
+    const openModal = () => {
+        setIsModalOpen(true)
     }
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+    }
+
 
   return (
     <div className='homePage'>
-        <NewListModal onClose={showModal} show={modalState} />
+        <NewListModal isModalOpen={isModalOpen} onClose={closeModal} />
         <div className="homePageHeading">
             <input type="text" placeholder="Finn handleliste" className="listSearch"/>
-            <span onClick={showModal}>
+            <span onClick={() => openModal()}>
                 <Button text={"Ny handleliste"} />
             </span>
         </div>
