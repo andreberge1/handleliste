@@ -4,7 +4,26 @@ import "./SearchResult.css"
 export default function SearchResult ({ queryItems, setShoppingList }) {
 
     const handleAddItem = (item) => {
-        setShoppingList(prev => [...prev, item])
+        setShoppingList(prev => {
+            const itemCategory = item.category
+                ? item.category.find(cat => cat.depth === -2)?.name || "Annet"
+                : "Annet"
+
+            const categoryItems = prev[itemCategory] || []
+            const itemExists = categoryItems.some(existingItem => existingItem.ean === item.ean)
+
+            if (itemExists) {
+                return prev
+            }
+
+            const updatedCategoryItems = [...categoryItems, item]
+
+            return {
+                ...prev,
+                [itemCategory]: updatedCategoryItems
+            }
+
+        })
     }
 
     return (

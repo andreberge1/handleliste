@@ -26,10 +26,10 @@ export default function Home () {
         setIsModalOpen(false)
     }
 
-
   return (
     <div className='homePage'>
         <NewListModal isModalOpen={isModalOpen} onClose={closeModal} />
+        
         <div className="homePageHeading">
             <input type="text" placeholder="Finn handleliste" className="listSearch"/>
             <span onClick={() => openModal()}>

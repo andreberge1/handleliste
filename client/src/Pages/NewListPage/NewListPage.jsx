@@ -11,13 +11,13 @@ import Button from '../../components/Button/Button';
 
 export default function NewListPage () {
   const [query, setQuery] = useState()
-  const [searchItemList, setsearchItemList] = useState([])
-  const [shoppingList, setShoppingList] = useState([])
+  const [searchItemList, setSeachItemList] = useState([])
+  const [shoppingList, setShoppingList] = useState({})
 
   const handleSumbit = async (event) => {
     event.preventDefault()
     const items = await getGroceriesFromAPI(query)
-    setsearchItemList(items)
+    setSeachItemList(items)
   }
 
   const handleChange = (event) => {
@@ -27,7 +27,17 @@ export default function NewListPage () {
 
   const handleRemove = value => {
     setShoppingList(prev => {
-        return prev.filter(item => item !== value)
+        const updatedList = {}
+
+        Object.keys(prev).forEach(category => {
+            const updatedCategoryItems = prev[category].filter(item => item.ean !== value.ean)
+
+            if (updatedCategoryItems.length > 0) {
+                updatedList[category] = updatedCategoryItems
+            }
+        })
+
+        return updatedList
     })
   }
 
@@ -40,28 +50,25 @@ export default function NewListPage () {
                 <SaveIcon size={"45"} />
             </div>
 
-            {
-                shoppingList.length > 0 ? (
-                    <ul>
-                        {
-                            shoppingList.map(item => (
-                                <li className="shoppingListItem" key={item.ean}>
-                                    <span>
-                                        <p className="product">{item.product}</p>
-                                        <p className="vendor">{item.vendor}</p>
-                                    </span>
-                                    <span id="removeButton" onClick={() => handleRemove(item)}>
-                                        <RemoveIcon size={"35"} />
-                                    </span>
+            {Object.entries(shoppingList).map(([category, items]) => (
+                <div key={category} className="shoppingListCategory">
+                    <p>{category}</p>
 
-                                </li>
-                            ))
-                        }
+                    <ul>
+                        {items.map(item => (
+                            <li className="shoppingListItem" key={item.ean}>
+                                <span>
+                                    <p className="product">{item.product}</p>
+                                    <p className="vendor">{item.vendor}</p>
+                                </span>
+                                <span id='removeButton' onClick={() => handleRemove(item)}>
+                                    <RemoveIcon size={"35"} />
+                                </span>
+                            </li>
+                        ))}
                     </ul>
-                ) : (
-                    <p>Ingen varer</p>
-                )
-            }
+                </div>
+            ))}
         </div>
 
         <div className="searchContainer">
