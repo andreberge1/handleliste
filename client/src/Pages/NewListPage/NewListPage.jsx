@@ -52,7 +52,7 @@ export default function NewListPage () {
 
             {Object.entries(shoppingList).map(([category, items]) => (
                 <div key={category} className="shoppingListCategory">
-                    <p>{category}</p>
+                    <p className='categoryName'>{category}</p>
 
                     <ul>
                         {items.map(item => (

@@ -37,6 +37,13 @@
 
 .newListContainer ul {
     padding-left: 0;
+    margin-top: 0px;
+}
+
+.categoryName {
+    font-family: var(--font-headers);
+    font-size: larger;
+    margin-bottom: 0px;
 }
 
 .shoppingListItem {
