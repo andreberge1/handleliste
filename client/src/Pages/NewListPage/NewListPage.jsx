@@ -59,7 +59,7 @@ export default function NewListPage () {
                             <li className="shoppingListItem" key={item.ean}>
                                 <span>
                                     <p className="product">{item.product}</p>
-                                    <p className="vendor">{item.vendor}</p>
+                                    <p className="vendor">{item.vendor || "Ukjent"}</p>
                                 </span>
                                 <span id='removeButton' onClick={() => handleRemove(item)}>
                                     <RemoveIcon size={"35"} />

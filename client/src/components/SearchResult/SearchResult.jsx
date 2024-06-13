@@ -34,7 +34,7 @@ export default function SearchResult ({ queryItems, setShoppingList }) {
                         <li onClick={() => handleAddItem(item)} className="groceryItem">
                             <span>
                                 <p className="product">{item.product}</p>
-                                <p className="vendor">{item.vendor}</p>
+                                <p className="vendor">{item.vendor || "Ukjent"}</p>
                             </span>
                         </li>
                     ))
