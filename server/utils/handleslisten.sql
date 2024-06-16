@@ -4,8 +4,8 @@ CREATE TABLE "users" (
   "first_name" varchar NOT NULL,
   "last_name" varchar NOT NULL,
   "password" varchar NOT NULL,
-  "created_date" timestamp NOT NULL,
-  "active" bool
+  "created_date" timestamp DEFAULT (CURRENT_TIMESTAMP),
+  "active" bool DEFAULT true
 );
 
 CREATE TABLE "friends" (
